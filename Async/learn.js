@@ -7,7 +7,7 @@
 
 const datas = [
     {name : "Ajay" , profession : "Software Engineer"},
-    {name : "Ajay" , profession : "Software Engineer"}
+    {name : "Vijay" , profession : "Software Engineer"}
 ]
 function getDatas(){
 
@@ -20,5 +20,14 @@ function getDatas(){
     } , 1000);
 
 }
-getDatas();
+// getDatas();
+
+function createdata(newdata){
+    setTimeout(()=>{
+        datas.push(newdata);
+    } , 2000);
+
+}
+createdata({name : "Vivek" , Profession : "Software Engineer"})
+getDatas()
 
