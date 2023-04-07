@@ -5,6 +5,8 @@
     Source : TechnicalSunejaji(Youtube)
 */
 
+//callBack
+
 const datas = [
     {name : "Ajay" , profession : "Software Engineer"},
     {name : "Vijay" , profession : "Software Engineer"}
@@ -22,12 +24,16 @@ function getDatas(){
 }
 // getDatas();
 
-function createdata(newdata){
+function createdata(newdata , callback){
+
+   
+
     setTimeout(()=>{
         datas.push(newdata);
+        callback();
     } , 2000);
 
 }
-createdata({name : "Vivek" , Profession : "Software Engineer"})
-getDatas()
+createdata({name : "Vivek" , Profession : "Software Engineer"} , getDatas)
+
 
