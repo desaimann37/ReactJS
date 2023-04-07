@@ -24,16 +24,23 @@ function getDatas(){
 }
 // getDatas();
 
-function createdata(newdata , callback){
+function createdata(newdata){
+
+    return new Promise((resolve , reject)=>{
+        setTimeout(()=>{
+            datas.push(newdata);
+            let error = true;
+            if(!error){
+                resolve();
+            }else{
+                reject("Kuch toh Gadbad Hai Daya...");
+            }
+            
+        } , 2000);
+    })
 
    
-
-    setTimeout(()=>{
-        datas.push(newdata);
-        callback();
-    } , 2000);
-
 }
-createdata({name : "Vivek" , Profession : "Software Engineer"} , getDatas)
+createdata({name : "Vivek" , Profession : "Software Engineer"}).then(getDatas).catch(err => console.log(err));
 
 
